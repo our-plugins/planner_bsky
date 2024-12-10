@@ -1,5 +1,3 @@
-
-
 import { BskyAgent, RichText } from '@atproto/api';
 import * as fs from 'fs';
 import * as path from 'path';

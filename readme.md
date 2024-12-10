@@ -54,6 +54,10 @@ You need to create a `posts.json` file, which contains the post data. Here's an 
         "createAt": "20:36"
     },
     {
+        "imagepath": "C:\\TypeScript\\img\\meme5.PNG",
+        "createAt": "14:50"
+    },
+    {
         "text": "check out this post!",
         "uri": "https://journalpets.com/why-do-dogs-lick-their-noses-uncover-the-surprising-reasons/",
         "title": "why-do-dogs-lick-their-noses-uncover-the-surprising-reasons",
