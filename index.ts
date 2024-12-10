@@ -14,7 +14,7 @@ interface Post {
     title?: string; // Optional title for link previews
     description?: string; // Optional description for link previews
     thumbnail?: string; // Optional thumbnail for link previews
-    createAt: string; // Scheduled time for posting
+    createAt: string; // Scheduled time for posting in format "YYYY-MM-DD-HH-mm"
 }
 
 // Function to read posts from a JSON file
@@ -112,8 +112,17 @@ function schedulePosts(agent: BskyAgent) {
     const posts: Post[] = readPostsFromFile('posts.json'); // Load posts from JSON file
 
     posts.forEach((post: Post) => {
-        const [hour, minute] = post.createAt.split(':').map(Number); // Convert time to numbers
-        const cronTime = `${minute} ${hour} * * *`; // Cron format (e.g., '35 20 * * *')
+        const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
+        const scheduledDate = new Date(year, month - 1, day, hour, minute); // Create a Date object
+
+        // Check if the scheduled date is in the future
+        const now = new Date();
+        if (scheduledDate <= now) {
+            console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
+            return;
+        }
+
+        const cronTime = `${minute} ${hour} ${day} ${month} *`; // Cron format
 
         // Schedule the job
         const job = new CronJob(cronTime, () => postContent(agent, post));
@@ -141,7 +150,6 @@ async function main() {
 
 // Start the script
 main();
-
 
 // import { BskyAgent, RichText } from '@atproto/api';
 // import * as fs from 'fs';

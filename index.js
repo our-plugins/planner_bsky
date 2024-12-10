@@ -130,8 +130,14 @@ function postContent(agent, post) {
 function schedulePosts(agent) {
     const posts = readPostsFromFile('posts.json');
     posts.forEach((post) => {
-        const [hour, minute] = post.createAt.split(':').map(Number);
-        const cronTime = `${minute} ${hour} * * *`;
+        const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
+        const scheduledDate = new Date(year, month - 1, day, hour, minute);
+        const now = new Date();
+        if (scheduledDate <= now) {
+            console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
+            return;
+        }
+        const cronTime = `${minute} ${hour} ${day} ${month} *`;
         const job = new cron_1.CronJob(cronTime, () => postContent(agent, post));
         job.start();
         console.log(`Scheduled post: "${post.text || post.uri}" at ${post.createAt}`);
