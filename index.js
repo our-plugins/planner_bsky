@@ -92,7 +92,8 @@ function postContent(agent, post) {
                 record.text = '';
             }
             if (post.imagepath) {
-                const blob = yield uploadBlob(agent, post.imagepath);
+                const filePath = path.join('img', post.imagepath);
+                const blob = yield uploadBlob(agent, filePath);
                 record.embed = {
                     $type: 'app.bsky.embed.images',
                     images: [

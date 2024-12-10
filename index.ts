@@ -66,7 +66,8 @@ async function postContent(agent: BskyAgent, post: Post) {
 
         // Handle image posts
         if (post.imagepath) {
-            const blob = await uploadBlob(agent, post.imagepath);
+            const filePath = path.join('img', post.imagepath); // Prepend 'img/' to the imagepath
+            const blob = await uploadBlob(agent, filePath);
             record.embed = {
                 $type: 'app.bsky.embed.images',
                 images: [
