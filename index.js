@@ -45,7 +45,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("@atproto/api");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
-const cron_1 = require("cron");
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 function readPostsFromFile(filePath) {
@@ -128,19 +127,27 @@ function postContent(agent, post) {
     });
 }
 function schedulePosts(agent) {
-    const posts = readPostsFromFile('posts.json');
-    posts.forEach((post) => {
-        const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
-        const scheduledDate = new Date(year, month - 1, day, hour, minute);
-        const now = new Date();
-        if (scheduledDate <= now) {
-            console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
-            return;
-        }
-        const cronTime = `${minute} ${hour} ${day} ${month} *`;
-        const job = new cron_1.CronJob(cronTime, () => postContent(agent, post));
-        job.start();
-        console.log(`Scheduled post: "${post.text || post.uri}" at ${post.createAt}`);
+    return __awaiter(this, void 0, void 0, function* () {
+        const posts = readPostsFromFile('posts.json');
+        let activeJobs = 0;
+        yield Promise.all(posts.map((post) => __awaiter(this, void 0, void 0, function* () {
+            const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
+            const scheduledDate = new Date(year, month - 1, day, hour, minute);
+            if (scheduledDate <= new Date()) {
+                console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
+                return;
+            }
+            activeJobs++;
+            console.log(`Posting scheduled: "${post.text || post.uri}" at ${post.createAt}`);
+            const delay = scheduledDate.getTime() - Date.now();
+            yield new Promise((resolve) => setTimeout(resolve, delay));
+            yield postContent(agent, post);
+            activeJobs--;
+            if (activeJobs === 0) {
+                console.log('All posts completed. Exiting...');
+                process.exit(0);
+            }
+        })));
     });
 }
 function main() {
@@ -151,10 +158,11 @@ function main() {
                 identifier: process.env.BLUESKY_USERNAME,
                 password: process.env.BLUESKY_PASSWORD,
             });
-            schedulePosts(agent);
+            yield schedulePosts(agent);
         }
         catch (error) {
             console.error('Error initializing Bluesky agent:', error);
+            process.exit(1);
         }
     });
 }

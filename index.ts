@@ -8,13 +8,13 @@ dotenv.config();
 
 // Define the Post type
 interface Post {
-    text?: string; // Optional for link previews
-    imagepath?: string; // Optional for image posts
-    uri?: string; // Optional for external link posts
-    title?: string; // Optional title for link previews
-    description?: string; // Optional description for link previews
-    thumbnail?: string; // Optional thumbnail for link previews
-    createAt: string; // Scheduled time for posting in format "YYYY-MM-DD-HH-mm"
+    text?: string;
+    imagepath?: string;
+    uri?: string;
+    title?: string;
+    description?: string;
+    thumbnail?: string;
+    createAt: string;
 }
 
 // Function to read posts from a JSON file
@@ -49,37 +49,33 @@ async function createRichText(agent: BskyAgent, text: string): Promise<RichText>
 // Function to handle posting content
 async function postContent(agent: BskyAgent, post: Post) {
     try {
-        // Initialize the post record
         const record: Partial<any> = {
             $type: 'app.bsky.feed.post',
             createdAt: new Date().toISOString(),
         };
 
-        // Handle text or RichText posts
         if (post.text) {
             const rt = await createRichText(agent, post.text);
             record.text = rt.text;
             record.facets = rt.facets;
         } else {
-            record.text = ''; // Provide default text for non-text posts
+            record.text = '';
         }
 
-        // Handle image posts
         if (post.imagepath) {
-            const filePath = path.join('img', post.imagepath); // Prepend 'img/' to the imagepath
+            const filePath = path.join('img', post.imagepath);
             const blob = await uploadBlob(agent, filePath);
             record.embed = {
                 $type: 'app.bsky.embed.images',
                 images: [
                     {
-                        alt: post.text || 'Image Post', // Use text as alt or fallback
+                        alt: post.text || 'Image Post',
                         image: blob,
                     },
                 ],
             };
         }
 
-        // Handle external link posts
         if (post.uri) {
             const embed: any = {
                 $type: 'app.bsky.embed.external',
@@ -90,7 +86,6 @@ async function postContent(agent: BskyAgent, post: Post) {
                 },
             };
 
-            // Upload thumbnail if provided
             if (post.thumbnail) {
                 const thumbBlob = await uploadBlob(agent, post.thumbnail);
                 embed.external.thumb = thumbBlob;
@@ -99,57 +94,66 @@ async function postContent(agent: BskyAgent, post: Post) {
             record.embed = embed;
         }
 
-        // Post the record
-        await agent.post(record as any); // Explicit cast to match API requirements
+        await agent.post(record as any);
         console.log(`Posted successfully: ${JSON.stringify(post)}`);
     } catch (error) {
         console.error(`Error posting: ${JSON.stringify(post)} -`, error);
     }
 }
 
-// Function to schedule posts based on `createAt` time
-function schedulePosts(agent: BskyAgent) {
-    const posts: Post[] = readPostsFromFile('posts.json'); // Load posts from JSON file
+// Function to schedule posts and exit when done
+async function schedulePosts(agent: BskyAgent) {
+    const posts: Post[] = readPostsFromFile('posts.json');
+    let activeJobs = 0;
 
-    posts.forEach((post: Post) => {
-        const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
-        const scheduledDate = new Date(year, month - 1, day, hour, minute); // Create a Date object
+    await Promise.all(
+        posts.map(async (post) => {
+            const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
+            const scheduledDate = new Date(year, month - 1, day, hour, minute);
 
-        // Check if the scheduled date is in the future
-        const now = new Date();
-        if (scheduledDate <= now) {
-            console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
-            return;
-        }
+            if (scheduledDate <= new Date()) {
+                console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
+                return;
+            }
 
-        const cronTime = `${minute} ${hour} ${day} ${month} *`; // Cron format
+            activeJobs++;
+            console.log(`Posting scheduled: "${post.text || post.uri}" at ${post.createAt}`);
 
-        // Schedule the job
-        const job = new CronJob(cronTime, () => postContent(agent, post));
-        job.start();
-        console.log(`Scheduled post: "${post.text || post.uri}" at ${post.createAt}`);
-    });
+            // Wait until the scheduled time
+            const delay = scheduledDate.getTime() - Date.now();
+            await new Promise((resolve) => setTimeout(resolve, delay));
+
+            await postContent(agent, post);
+            activeJobs--;
+
+            if (activeJobs === 0) {
+                console.log('All posts completed. Exiting...');
+                process.exit(0); // Exit the script when all jobs are done
+            }
+        })
+    );
 }
 
 // Main function
 async function main() {
     try {
-        // Initialize the Bluesky agent and login
         const agent = new BskyAgent({ service: 'https://bsky.social' });
         await agent.login({
             identifier: process.env.BLUESKY_USERNAME!,
             password: process.env.BLUESKY_PASSWORD!,
         });
 
-        // Schedule posts
-        schedulePosts(agent);
+        await schedulePosts(agent);
     } catch (error) {
         console.error('Error initializing Bluesky agent:', error);
+        process.exit(1); // Exit with error
     }
 }
 
-// Start the script
 main();
+
+
+
 
 // import { BskyAgent, RichText } from '@atproto/api';
 // import * as fs from 'fs';
