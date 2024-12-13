@@ -1,7 +1,6 @@
 import { BskyAgent, RichText } from '@atproto/api';
 import * as fs from 'fs';
 import * as path from 'path';
-import { CronJob } from 'cron';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -15,6 +14,51 @@ interface Post {
     description?: string;
     thumbnail?: string;
     createAt: string;
+}
+
+// Paths for session and posts
+const SESSION_FILE = path.join(__dirname, '.bsky-session.json');
+const POSTS_FILE = path.join(__dirname, 'posts.json');
+
+// Function to read session from file
+function loadSession(): any | null {
+    try {
+        const data = fs.readFileSync(SESSION_FILE, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        return null; // No session file exists
+    }
+}
+
+// Function to save session to file
+function saveSession(session: any) {
+    fs.writeFileSync(SESSION_FILE, JSON.stringify(session), 'utf8');
+}
+
+// Function to check if a token is expired
+function isTokenExpired(session: any): boolean {
+    const expiry = new Date(session.expires_at); // Ensure your session object includes this field
+    return expiry.getTime() < Date.now();
+}
+
+// Function to initialize the agent with reused or refreshed session
+async function initializeAgent(): Promise<BskyAgent> {
+    const agent = new BskyAgent({ service: 'https://bsky.social' });
+    const session = loadSession();
+
+    if (session && !isTokenExpired(session)) {
+        console.log('Reusing saved session...');
+        await agent.resumeSession(session); // Use resumeSession to reuse the session
+    } else {
+        console.log('Logging in to create a new session...');
+        const newSession = await agent.login({
+            identifier: process.env.BLUESKY_USERNAME!,
+            password: process.env.BLUESKY_PASSWORD!,
+        });
+        saveSession(newSession); // Save the new session
+    }
+
+    return agent;
 }
 
 // Function to read posts from a JSON file
@@ -103,7 +147,7 @@ async function postContent(agent: BskyAgent, post: Post) {
 
 // Function to schedule posts and exit when done
 async function schedulePosts(agent: BskyAgent) {
-    const posts: Post[] = readPostsFromFile('posts.json');
+    const posts: Post[] = readPostsFromFile(POSTS_FILE);
     let activeJobs = 0;
 
     await Promise.all(
@@ -137,12 +181,7 @@ async function schedulePosts(agent: BskyAgent) {
 // Main function
 async function main() {
     try {
-        const agent = new BskyAgent({ service: 'https://bsky.social' });
-        await agent.login({
-            identifier: process.env.BLUESKY_USERNAME!,
-            password: process.env.BLUESKY_PASSWORD!,
-        });
-
+        const agent = await initializeAgent();
         await schedulePosts(agent);
     } catch (error) {
         console.error('Error initializing Bluesky agent:', error);
@@ -151,6 +190,7 @@ async function main() {
 }
 
 main();
+
 
 
 
