@@ -97,7 +97,7 @@ function postContent(agent, post) {
                     $type: 'app.bsky.embed.images',
                     images: [
                         {
-                            alt: post.text || 'Image Post',
+                            alt: post.text || process.env.BLUESKY_USERNAME,
                             image: blob,
                         },
                     ],
