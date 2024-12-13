@@ -1,10 +1,52 @@
 [
     {
-        "imagepath": "meme9.PNG",
-        "createAt": "2024-12-13-15-50"
+        "text": "Baby it's cold outside! ❄️🥶",
+        "imagepath": "post1.jpg",
+        "createAt": "2024-12-13-19-00"
     },
     {
-        "imagepath": "meme6.PNG",
-        "createAt": "2024-12-13-16-00"
+        "text": "I just like to smile. Smiling's my favorite! ❤️🎅",
+        "imagepath": "post2.jpg",
+        "createAt": "2024-12-13-20-00"
+    },
+    {
+        "text": "When you can't wait for Christmas! 🎄🎅",
+        "imagepath": "post3.jpg",
+        "createAt": "2024-12-13-21-00"
+    },
+    {
+        "text": "Psst, hey you! Did anyone tell you that you're beautiful today? Well you are! 🩷 Love",
+        "imagepath": "post4.jpg",
+        "createAt": "2024-12-13-22-00"
+    },
+    {
+        "text": "Mommmmm!! The cat went behind the tree. 🎄Can I go get her?",
+        "imagepath": "post5.jpg",
+        "createAt": "2024-12-13-23-00"
+    },
+    {
+        "text": "My mom went to The Dollar Tree and all she bought me was this lousy elf hat. 🎄",
+        "imagepath": "post6.jpg",
+        "createAt": "2024-12-14-00-00"
+    },
+    {
+        "text": "When your sister takes your spot on the couch.",
+        "imagepath": "post7.jpg",
+        "createAt": "2024-12-14-01-00"
+    },
+    {
+        "text": "Hand over the chicken and nobody gets hurt. 😂",
+        "imagepath": "post8.jpg",
+        "createAt": "2024-12-14-02-00"
+    },
+    {
+        "text": "Happy weekend!!! I've got my couch buddy for the night. If you need us, we'll be right here.",
+        "imagepath": "post9.jpg",
+        "createAt": "2024-12-14-03-00"
+    },
+    {
+        "text": "We're all ears! 🩷😂",
+        "imagepath": "post10.jpg",
+        "createAt": "2024-12-14-04-00"
     }
 ]
