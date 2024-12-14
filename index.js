@@ -47,43 +47,6 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
-const SESSION_FILE = path.join(__dirname, '.bsky-session.json');
-const POSTS_FILE = path.join(__dirname, 'posts.json');
-function loadSession() {
-    try {
-        const data = fs.readFileSync(SESSION_FILE, 'utf8');
-        return JSON.parse(data);
-    }
-    catch (error) {
-        return null;
-    }
-}
-function saveSession(session) {
-    fs.writeFileSync(SESSION_FILE, JSON.stringify(session), 'utf8');
-}
-function isTokenExpired(session) {
-    const expiry = new Date(session.expires_at);
-    return expiry.getTime() < Date.now();
-}
-function initializeAgent() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const agent = new api_1.BskyAgent({ service: 'https://bsky.social' });
-        const session = loadSession();
-        if (session && !isTokenExpired(session)) {
-            console.log('Reusing saved session...');
-            yield agent.resumeSession(session);
-        }
-        else {
-            console.log('Logging in to create a new session...');
-            const newSession = yield agent.login({
-                identifier: process.env.BLUESKY_USERNAME,
-                password: process.env.BLUESKY_PASSWORD,
-            });
-            saveSession(newSession);
-        }
-        return agent;
-    });
-}
 function readPostsFromFile(filePath) {
     try {
         const data = fs.readFileSync(filePath, 'utf8');
@@ -134,7 +97,6 @@ function postContent(agent, post) {
                     $type: 'app.bsky.embed.images',
                     images: [
                         {
-                            alt: process.env.BLUESKY_USERNAME,
                             image: blob,
                         },
                     ],
@@ -150,7 +112,8 @@ function postContent(agent, post) {
                     },
                 };
                 if (post.thumbnail) {
-                    const thumbBlob = yield uploadBlob(agent, post.thumbnail);
+                    const thumbPath = path.join('img', post.thumbnail);
+                    const thumbBlob = yield uploadBlob(agent, thumbPath);
                     embed.external.thumb = thumbBlob;
                 }
                 record.embed = embed;
@@ -165,7 +128,7 @@ function postContent(agent, post) {
 }
 function schedulePosts(agent) {
     return __awaiter(this, void 0, void 0, function* () {
-        const posts = readPostsFromFile(POSTS_FILE);
+        const posts = readPostsFromFile('posts.json');
         let activeJobs = 0;
         yield Promise.all(posts.map((post) => __awaiter(this, void 0, void 0, function* () {
             const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
@@ -190,7 +153,11 @@ function schedulePosts(agent) {
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const agent = yield initializeAgent();
+            const agent = new api_1.BskyAgent({ service: 'https://bsky.social' });
+            yield agent.login({
+                identifier: process.env.BLUESKY_USERNAME,
+                password: process.env.BLUESKY_PASSWORD,
+            });
             yield schedulePosts(agent);
         }
         catch (error) {

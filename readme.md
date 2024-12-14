@@ -41,7 +41,6 @@ npm install @atproto/api dotenv cron
    BLUESKY_PASSWORD=your_password
    ```
 
-4. Create an `.bsky-session.json` file in the root directory (empthy file)
 
 5. Prepare your `posts.json` file in the root directory to define your posts (see the example below).
 
