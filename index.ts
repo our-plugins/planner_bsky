@@ -1,7 +1,6 @@
 import { BskyAgent, RichText } from '@atproto/api';
 import * as fs from 'fs';
 import * as path from 'path';
-import { CronJob } from 'cron';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -10,11 +9,52 @@ dotenv.config();
 interface Post {
     text?: string;
     imagepath?: string;
+    alt?: string;
     uri?: string;
     title?: string;
     description?: string;
     thumbnail?: string;
     createAt: string;
+}
+
+// Rate limit tracking
+let requestsThisMinute = 0;
+let pointsThisHour = 0;
+let lastRequestTime = Date.now();
+const MAX_REQUESTS_PER_MINUTE = 3000;
+const MAX_POINTS_PER_HOUR = 5000;
+
+// Function to manage rate limits
+async function manageRateLimits() {
+    const currentTime = Date.now();
+    const timeElapsed = currentTime - lastRequestTime;
+
+    if (timeElapsed >= 60000) { // If it's been more than a minute
+        requestsThisMinute = 0; // Reset requests count
+        lastRequestTime = currentTime;
+    }
+
+    if (requestsThisMinute >= MAX_REQUESTS_PER_MINUTE) {
+        const waitTime = 60000 - timeElapsed;
+        console.log(`Rate limit reached. Waiting for ${waitTime / 1000} seconds.`);
+        await new Promise(resolve => setTimeout(resolve, waitTime)); // Wait before making next request
+    }
+}
+
+// Function to track points
+function trackPoints(actionType: string) {
+    const pointsMap: Record<string, number> = { CREATE: 3, UPDATE: 2, DELETE: 1 };
+    pointsThisHour += pointsMap[actionType];
+}
+
+// Function to check point limits before posting
+async function checkPointLimits() {
+    if (pointsThisHour >= MAX_POINTS_PER_HOUR) {
+        const waitTime = 60 * 60 * 1000 - (Date.now() % (60 * 60 * 1000)); // Wait until the next hour
+        console.log(`Point limit reached. Waiting for ${waitTime / 1000} seconds.`);
+        await new Promise(resolve => setTimeout(resolve, waitTime)); // Wait until the next hour
+        pointsThisHour = 0; // Reset points at the start of the new hour
+    }
 }
 
 // Function to read posts from a JSON file
@@ -46,9 +86,12 @@ async function createRichText(agent: BskyAgent, text: string): Promise<RichText>
     return rt;
 }
 
-// Function to handle posting content
-async function postContent(agent: BskyAgent, post: Post) {
+// Function to handle posting content with rate limit considerations
+async function postContentWithRateLimits(agent: BskyAgent, post: Post) {
     try {
+        await manageRateLimits(); // Ensure we're not exceeding request rate limits
+        await checkPointLimits(); // Ensure we're not exceeding point limits
+
         const record: Partial<any> = {
             $type: 'app.bsky.feed.post',
             createdAt: new Date().toISOString(),
@@ -58,6 +101,7 @@ async function postContent(agent: BskyAgent, post: Post) {
             const rt = await createRichText(agent, post.text);
             record.text = rt.text;
             record.facets = rt.facets;
+            trackPoints('CREATE');
         } else {
             record.text = '';
         }
@@ -69,11 +113,12 @@ async function postContent(agent: BskyAgent, post: Post) {
                 $type: 'app.bsky.embed.images',
                 images: [
                     {
-                        // alt: post.text || 'Image Post',
+                        alt: post.alt || 'Image Post',
                         image: blob,
                     },
                 ],
             };
+            trackPoints('CREATE');
         }
 
         if (post.uri) {
@@ -87,7 +132,7 @@ async function postContent(agent: BskyAgent, post: Post) {
             };
 
             if (post.thumbnail) {
-                const thumbPath = path.join('img', post.thumbnail); // Ensure thumbnail path is constructed correctly
+                const thumbPath = path.join('img', post.thumbnail);
                 const thumbBlob = await uploadBlob(agent, thumbPath);
                 embed.external.thumb = thumbBlob;
             }
@@ -97,6 +142,7 @@ async function postContent(agent: BskyAgent, post: Post) {
 
         await agent.post(record as any);
         console.log(`Posted successfully: ${JSON.stringify(post)}`);
+        requestsThisMinute++;
     } catch (error) {
         console.error(`Error posting: ${JSON.stringify(post)} -`, error);
     }
@@ -124,7 +170,7 @@ async function schedulePosts(agent: BskyAgent) {
             const delay = scheduledDate.getTime() - Date.now();
             await new Promise((resolve) => setTimeout(resolve, delay));
 
-            await postContent(agent, post);
+            await postContentWithRateLimits(agent, post);
             activeJobs--;
 
             if (activeJobs === 0) {
@@ -152,6 +198,7 @@ async function main() {
 }
 
 main();
+
 
 
 // import { BskyAgent, RichText } from '@atproto/api';

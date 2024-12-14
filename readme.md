@@ -42,34 +42,39 @@ npm install @atproto/api dotenv cron
    ```
 
 
-5. Prepare your `posts.json` file in the root directory to define your posts (see the example below).
+4. Prepare your `posts.json` file in the root directory to define your posts (see the example below).
 
 ## Posts.json Example
 ```json
 [
     {
         "text": "Hello world",
-        "createAt": "20:35"
+        "createAt": "YYYY-MM-DD-HH-MM"
     },
     {
-        "imagepath": "C:\\TypeScript\\img\\meme2.jpg",
+        "imagepath": "example.jpg",
         "text": ":joy:",
-        "createAt": "20:36"
+        "alt": "post2.PNG",
+        "createAt": "YYYY-MM-DD-HH-MM",
     },
     {
-        "imagepath": "C:\\TypeScript\\img\\meme5.PNG",
-        "createAt": "14:50"
+        "imagepath": "example.PNG",
+        "alt": "post2.PNG",
+        "createAt": "YYYY-MM-DD-HH-MM",
     },
     {
         "text": "check out this post!",
         "uri": "https://journalpets.com/why-do-dogs-lick-their-noses-uncover-the-surprising-reasons/",
-        "title": "why-do-dogs-lick-their-noses-uncover-the-surprising-reasons",
+        "title": "why do dogs lick their noses uncover The surprising reasons",
         "description": "why do dogs lick their noses uncover the surprising reasons",
-        "thumbnail": "C:\\TypeScript\\img\\why-do-dogs-lick-their-noses-close-up-shot-of-a-playful-dog-with-a-bright.webp",
-        "createAt": "20:37"
+        "thumbnail": "example.webp",
+        "createAt": "YYYY-MM-DD-HH-MM"
     }
 ]
 ```
+## Notes:
+- The `text` field should not exceed 250 characters.
+- The `createAt` field should follow the format: YYYY-MM-DD-HH-MM.
 
 ## Usage
 

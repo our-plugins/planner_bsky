@@ -47,6 +47,40 @@ const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
+let requestsThisMinute = 0;
+let pointsThisHour = 0;
+let lastRequestTime = Date.now();
+const MAX_REQUESTS_PER_MINUTE = 3000;
+const MAX_POINTS_PER_HOUR = 5000;
+function manageRateLimits() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const currentTime = Date.now();
+        const timeElapsed = currentTime - lastRequestTime;
+        if (timeElapsed >= 60000) {
+            requestsThisMinute = 0;
+            lastRequestTime = currentTime;
+        }
+        if (requestsThisMinute >= MAX_REQUESTS_PER_MINUTE) {
+            const waitTime = 60000 - timeElapsed;
+            console.log(`Rate limit reached. Waiting for ${waitTime / 1000} seconds.`);
+            yield new Promise(resolve => setTimeout(resolve, waitTime));
+        }
+    });
+}
+function trackPoints(actionType) {
+    const pointsMap = { CREATE: 3, UPDATE: 2, DELETE: 1 };
+    pointsThisHour += pointsMap[actionType];
+}
+function checkPointLimits() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (pointsThisHour >= MAX_POINTS_PER_HOUR) {
+            const waitTime = 60 * 60 * 1000 - (Date.now() % (60 * 60 * 1000));
+            console.log(`Point limit reached. Waiting for ${waitTime / 1000} seconds.`);
+            yield new Promise(resolve => setTimeout(resolve, waitTime));
+            pointsThisHour = 0;
+        }
+    });
+}
 function readPostsFromFile(filePath) {
     try {
         const data = fs.readFileSync(filePath, 'utf8');
@@ -75,9 +109,11 @@ function createRichText(agent, text) {
         return rt;
     });
 }
-function postContent(agent, post) {
+function postContentWithRateLimits(agent, post) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            yield manageRateLimits();
+            yield checkPointLimits();
             const record = {
                 $type: 'app.bsky.feed.post',
                 createdAt: new Date().toISOString(),
@@ -86,6 +122,7 @@ function postContent(agent, post) {
                 const rt = yield createRichText(agent, post.text);
                 record.text = rt.text;
                 record.facets = rt.facets;
+                trackPoints('CREATE');
             }
             else {
                 record.text = '';
@@ -97,10 +134,12 @@ function postContent(agent, post) {
                     $type: 'app.bsky.embed.images',
                     images: [
                         {
+                            alt: post.alt || 'Image Post',
                             image: blob,
                         },
                     ],
                 };
+                trackPoints('CREATE');
             }
             if (post.uri) {
                 const embed = {
@@ -120,6 +159,7 @@ function postContent(agent, post) {
             }
             yield agent.post(record);
             console.log(`Posted successfully: ${JSON.stringify(post)}`);
+            requestsThisMinute++;
         }
         catch (error) {
             console.error(`Error posting: ${JSON.stringify(post)} -`, error);
@@ -141,7 +181,7 @@ function schedulePosts(agent) {
             console.log(`Posting scheduled: "${post.text || post.uri}" at ${post.createAt}`);
             const delay = scheduledDate.getTime() - Date.now();
             yield new Promise((resolve) => setTimeout(resolve, delay));
-            yield postContent(agent, post);
+            yield postContentWithRateLimits(agent, post);
             activeJobs--;
             if (activeJobs === 0) {
                 console.log('All posts completed. Exiting...');
