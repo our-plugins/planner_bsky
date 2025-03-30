@@ -1,22 +1,17 @@
 [
     {
-       "imagepath": "1.jpg",
-       "text": "When I told my dog to act normal because we got pulled over…\nand he started looking like a suspect in a crime documentary. 🐶🚔\n\nPlease repost so you can see more 😂",
-       "createAt": "2024-12-17-23-30"
+        "imagepath": "1.jpeg",
+        "alt": "post1",
+        "createAt": "2025-03-30-19-20"
    },
    {
-       "imagepath": "2.jpg",
-   "text": "POV: Your dog meets his idol Pluto and can’t stop smiling. 🐶❤️ Dreams do come true! \n\nPlease repost for more wholesome laughs! 🐾",
-       "createAt": "2024-12-18-01-00"
-   },
-   {
-       "imagepath": "3.jpg",
-   "text": "When your little cousin stares at you like this and asks: ‘Do you have games on your phone?’ 📱😂 \n\nPlease repost to see more funny faces! 🐕",
-       "createAt": "2024-12-18-03-00"
-   },
-   {
-       "imagepath": "4.jpg",
-   "text": "Hi, my name is Stopthat! But my friends also call me Getbackhere! 😂🐾 Dog owners, you know the struggle. \n\nPlease repost so you don’t miss out on more funny names! 🐶",
-       "createAt": "2024-12-18-06-00"
-   }
+    "imagepath": "2.jpeg",
+    "alt": "post2",
+    "createAt": "2025-03-30-20-00"
+},
+{
+    "imagepath": "3.jpeg",
+    "alt": "post3",
+    "createAt": "2025-03-30-21-00"
+}
 ]

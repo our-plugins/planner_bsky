@@ -151,34 +151,46 @@ async function postContentWithRateLimits(agent: BskyAgent, post: Post) {
 // Function to schedule posts and exit when done
 async function schedulePosts(agent: BskyAgent) {
     const posts: Post[] = readPostsFromFile('posts.json');
-    let activeJobs = 0;
-
-    await Promise.all(
-        posts.map(async (post) => {
-            const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
-            const scheduledDate = new Date(year, month - 1, day, hour, minute);
-
-            if (scheduledDate <= new Date()) {
-                console.log(`Skipped scheduling post: "${post.text || post.uri}" because the time ${post.createAt} is in the past.`);
-                return;
-            }
-
-            activeJobs++;
-            console.log(`Posting scheduled: "${post.text || post.uri}" at ${post.createAt}`);
-
-            // Wait until the scheduled time
-            const delay = scheduledDate.getTime() - Date.now();
-            await new Promise((resolve) => setTimeout(resolve, delay));
-
-            await postContentWithRateLimits(agent, post);
-            activeJobs--;
-
-            if (activeJobs === 0) {
-                console.log('All posts completed. Exiting...');
-                process.exit(0); // Exit the script when all jobs are done
-            }
-        })
-    );
+    
+    // Sort posts by scheduled time
+    posts.sort((a, b) => {
+        const [yearA, monthA, dayA, hourA, minuteA] = a.createAt.split('-').map(Number);
+        const [yearB, monthB, dayB, hourB, minuteB] = b.createAt.split('-').map(Number);
+        
+        const dateA = new Date(yearA, monthA - 1, dayA, hourA, minuteA);
+        const dateB = new Date(yearB, monthB - 1, dayB, hourB, minuteB);
+        
+        return dateA.getTime() - dateB.getTime();
+    });
+    
+    // Find next post to schedule
+    const now = new Date();
+    const nextPost = posts.find(post => {
+        const [year, month, day, hour, minute] = post.createAt.split('-').map(Number);
+        const scheduledDate = new Date(year, month - 1, day, hour, minute);
+        return scheduledDate > now;
+    });
+    
+    if (!nextPost) {
+        console.log('No future posts to schedule. Exiting.');
+        process.exit(0);
+        return;
+    }
+    
+    // Schedule only the next post
+    const [year, month, day, hour, minute] = nextPost.createAt.split('-').map(Number);
+    const scheduledDate = new Date(year, month - 1, day, hour, minute);
+    const delay = scheduledDate.getTime() - Date.now();
+    
+    console.log(`Next post scheduled: "${nextPost.text || nextPost.uri}" at ${nextPost.createAt} (in ${Math.floor(delay/60000)} minutes)`);
+    
+    // Wait until the scheduled time
+    setTimeout(async () => {
+        await postContentWithRateLimits(agent, nextPost);
+        
+        // Schedule the next post after this one completes
+        schedulePosts(agent);
+    }, delay);
 }
 
 // Main function
