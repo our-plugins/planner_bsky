@@ -1,0 +1,310 @@
+{
+  "totalAccounts": 42,
+  "activeAccounts": 42,
+  "bannedAccounts": 0,
+  "spamLabeledAccounts": 2,
+  "accountsWithErrors": 0,
+  "checkedAt": "2025-04-17T01:07:07.545Z",
+  "accounts": [
+    {
+      "username": "berthavannorman.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:y3u5r4cd3hbscfyf4uiz7sl5"
+    },
+    {
+      "username": "healtyrecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:wj3qntqdzlroiwqci7mwtxik"
+    },
+    {
+      "username": "yummyrecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:445honkq4xw653a3acqiyn3n"
+    },
+    {
+      "username": "yumrecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:4yrbl7khll6kvehrie5fmz7n"
+    },
+    {
+      "username": "muncherrecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:w5t3q7yaysxihgnqmhub2twn"
+    },
+    {
+      "username": "feeltasty.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:dcrrhgbyz24pn532utcbedy6"
+    },
+    {
+      "username": "quicklyyumi.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:pdnt4ol4g5wzp4nombw3mhl2"
+    },
+    {
+      "username": "worldrecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:2t3kiqvr774a2yei7fodksyw"
+    },
+    {
+      "username": "recipes4seasons.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:ehb36jqblersgaxg6r2ukxfn"
+    },
+    {
+      "username": "recipestime.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:yklqtkxs3pu6achmb2jlsn7e"
+    },
+    {
+      "username": "recipesking.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:qm72fdp7rkpxh3zph7kbadzn"
+    },
+    {
+      "username": "easyrecipeblog.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:ulbnxaow4357jcvvgfqd6uvu"
+    },
+    {
+      "username": "alexarecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:6jmaocaw3nedtazicue2yjn3"
+    },
+    {
+      "username": "emmarecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:wpxsul4352ky2awvwfc42bu7"
+    },
+    {
+      "username": "nadarecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:naim5kiewaj3zuyld3nwue2j"
+    },
+    {
+      "username": "sararecipes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:x47rpa7vzho25qvwfqgdnzs3"
+    },
+    {
+      "username": "ameliabenton.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:ixeq7h7khkx2f3kllk3ax6de"
+    },
+    {
+      "username": "sarahcaldwellfood.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:u5rqhfuz4hh5jjoip5oin4hw"
+    },
+    {
+      "username": "abigailmonroe.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": true,
+      "did": "did:plc:jipztpmhbp5nlydosfbvnoi6",
+      "labels": [
+        "spam"
+      ]
+    },
+    {
+      "username": "chloepiercefood.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:smeihy5pcn6ot2yn5m6mfnpy"
+    },
+    {
+      "username": "emilythornton.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:twl3x2aegx6h7fpkpxl7p6ol"
+    },
+    {
+      "username": "lilybarnes.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:erm53yqc54l5rfs25uld27ch"
+    },
+    {
+      "username": "charlotteblakefood.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:ivh55pxx3tjbcb7kqbyyqrbo"
+    },
+    {
+      "username": "ameliamorganfood.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:qba7mrssgovri3bpp6gzlsqt"
+    },
+    {
+      "username": "nataliereedw.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:wmcvmhfculouzsfiemkahbwf"
+    },
+    {
+      "username": "hannahlewisl.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:w5mrsbnsktiiughx2nhdazkq"
+    },
+    {
+      "username": "madisonclarkx.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:c5z6vmid633iqkwq4xyk5rkx"
+    },
+    {
+      "username": "abigailspencerp.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:54oay4xbr72zjy5r7jn6mw6g"
+    },
+    {
+      "username": "avapetersonz.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:rqfnmoozlbsjfl6krzzxahn7"
+    },
+    {
+      "username": "lilyrichardsons.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:ijzizuyirkeuxvo56xduuxkz"
+    },
+    {
+      "username": "zoeturnerx.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:mnf56gtuwki7o5gmav2xpro4"
+    },
+    {
+      "username": "ellawrightm.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:vscrvn6v7mnmbcgcglknrvow"
+    },
+    {
+      "username": "sophiehughesfood.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:4uwtrtn6psykddcutqcxg3iv"
+    },
+    {
+      "username": "scarlettdavidson.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:ipugk5jqpdiz67m2ckhvzi3g"
+    },
+    {
+      "username": "stellagrayw.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:s2dllg7tw2ntp4e65nfkot3r"
+    },
+    {
+      "username": "audreyscottz.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:wnpc2l4cekzwmtyug6llkge2"
+    },
+    {
+      "username": "gracemurphyqa.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:5s6lklrgmd6nnu4lx7qoarhn"
+    },
+    {
+      "username": "victoriaallena.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:u3vz63ipku45vsolvkrx4xsg"
+    },
+    {
+      "username": "lucy1mitchellm.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:akfqbksvoipmx5zts6eastjk"
+    },
+    {
+      "username": "sophiejordanz.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": true,
+      "did": "did:plc:5pq5bl47obvc27qleqfd7opa",
+      "labels": [
+        "spam"
+      ]
+    },
+    {
+      "username": "bellamatthewsa.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:pfhobxa5wrhi4zn2fwxlbzdj"
+    },
+    {
+      "username": "emilygarciaaw.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:xw6up2jwafr7hsa5prowxpox"
+    }
+  ]
+}
