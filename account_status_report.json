@@ -1,10 +1,10 @@
 {
   "totalAccounts": 56,
-  "activeAccounts": 56,
+  "activeAccounts": 54,
   "bannedAccounts": 0,
-  "spamLabeledAccounts": 3,
-  "accountsWithErrors": 0,
-  "checkedAt": "2025-04-17T01:24:17.885Z",
+  "spamLabeledAccounts": 6,
+  "accountsWithErrors": 2,
+  "checkedAt": "2025-04-19T02:15:51.411Z",
   "accounts": [
     {
       "username": "berthavannorman.bsky.social",
@@ -174,8 +174,11 @@
       "username": "lilyharrisonz.bsky.social",
       "active": true,
       "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:5tggck3h5ubylz7buyf7rd3o"
+      "spamLabeled": true,
+      "did": "did:plc:5tggck3h5ubylz7buyf7rd3o",
+      "labels": [
+        "spam"
+      ]
     },
     {
       "username": "chloewilliamszzz.bsky.social",
@@ -240,8 +243,11 @@
       "username": "zoezmitchell.bsky.social",
       "active": true,
       "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:xk3abgcbtmoopgg3ni7fegsn"
+      "spamLabeled": true,
+      "did": "did:plc:xk3abgcbtmoopgg3ni7fegsn",
+      "labels": [
+        "spam"
+      ]
     },
     {
       "username": "rubyacollins.bsky.social",
@@ -285,8 +291,11 @@
       "username": "caseyqvalez.bsky.social",
       "active": true,
       "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:u7lczwywe6k6jmrrklztgpw2"
+      "spamLabeled": true,
+      "did": "did:plc:u7lczwywe6k6jmrrklztgpw2",
+      "labels": [
+        "spam"
+      ]
     },
     {
       "username": "daisyknightzz.bsky.social",
@@ -381,10 +390,10 @@
     },
     {
       "username": "quinnharlowqq.bsky.social",
-      "active": true,
+      "active": false,
       "banned": false,
       "spamLabeled": false,
-      "did": "did:plc:dalgyug5ejkiqffimjina5zq"
+      "error": "Error: Account has been taken down"
     },
     {
       "username": "rubyashfordzzz.bsky.social",
@@ -402,10 +411,10 @@
     },
     {
       "username": "tessacollinszz.bsky.social",
-      "active": true,
+      "active": false,
       "banned": false,
       "spamLabeled": false,
-      "did": "did:plc:2c7aki6l245ztifmk5eba2dy"
+      "error": "Error: Account has been taken down"
     }
   ]
 }
