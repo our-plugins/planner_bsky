@@ -4,31 +4,46 @@ const https = require('https');
 const http = require('http');
 
 const imageUrls = [
-  "https://uprecipes.blog/wp-content/uploads/2025/04/classic-cherry-delight-ingredients-for-the.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/homemade-whipped-cinnamon-pumpkin-honey-butter.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/bang-bang-chicken-skewers-recipe-ingredients.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/southern-tea-cake-cookies-ingredients-1-1.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/southern-tea-cake-cookies-ingredients-.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/no-bake-candy-cane-pie-indulge-in.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/creamy-garlic-butter-salmon-and-shrimp-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/strawberry-chocolate-layer-cake-ingredients-chocolate-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/decadent-chocolate-caramel-ice-cream-cake-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/surf-and-turf-with-saffron-rice-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/red-velvet-cheesecake-recipe-ingredients-for-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/creamy-garlic-mushroom-sauce-ingredients-2-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/strawberry-pretzel-salad-ingredients-2-cups.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/surf-and-turf-with-creamy-alfredo-768x635.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/rice-krispie-cheesecake-ingredients-for-the.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/garlic-butter-chicken-pasta-ingredients-300g.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/fudgy-chocolate-brownies-with-strawberries-recipe.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/mini-banoffee-pies-recipe-ingredients-for.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/chocolate-raspberry-granola-parfaits-recipe-ingredients.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/04/red-velvet-cake-with-whipped-cream.jpg"
-];
+"https://uprecipes.blog/wp-content/uploads/2025/04/olive-oil-orange-cornmeal-cake-ingredients.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/easy-sugar-cone-cornucopias-ingredients-6.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/nutella-star-bread-with-puff-pastry.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/2-9.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/pumpkin-cannoli-ingredients-12-cannoli-shells.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/2-cups-7.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/hi-there-breakfast-planner.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/hi-there-holiday-host.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/hi-there-salad-enthusiast.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/pumpkin-fluff-dip-ingredients-1-can.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/easy-apple-crisp-ingredients-6-cups.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/cinnamon-roll-apple-crisp-ingredients-2.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/easy-baked-pumpkin-pudding-ingredients-1.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/quick-brussels-and-bacon-a-savory-and-delicious-combo.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/pan-fried-brussels-sprouts-simple-crispy-and-delicious.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/black-bean-huevos-rancheros-a-flavor-packed-mexican-classic.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/eggplant-meatballs-a-delicious-vegetarian-twist-on-classic-meatballs-full-of-flavor-and-perfect-for-any-pasta-or-sub.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/korean-fried-chicken-crispy-savory-and-irresistible.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/skillet-chicken-bulgogi-a-savory-and-sweet-korean-classic.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/simple-slow-cooked-korean-beef-soft-tacos-bold-flavors-in-every-bite.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/korean-spicy-marinated-pork-dae-ji-bool-gogi-a-bold-and-flavorful-delight.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/best-tuna-melt-new-jersey-diner.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/amazing-ground-turkey-tomato-sauce-your-new-go-to-for-pasta-night.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/italian-style-turkey-meatloaf-a-savory-and-satisfying-dinner-classic-with-an-italian-twist.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/quick-artichoke-pasta-salad-ingredients-.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/black-bean-and-chickpea-chili-ingredients.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/banana-banana-bread-ingredients-4.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/joys-easy-banana-bread-ingredients-.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/banana-chocolate-chip-bread-ingredients-.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/janets-rich-banana-bread-ingredients-.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/philly-cheesesteak-sandwich-with-garlic-mayo.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/this-recipe-contains-seafood.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/jiffy-corn-casserole-the-perfect-comfort-dish.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/slow-cooker-stuffing-holiday-magic-made-easy.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/grate-apple-crisp-ingredients-6-cups.jpg",
+"https://uprecipes.blog/wp-content/uploads/2025/04/acorn-candy-cookies-ingredients-1-package.jpg"];
 
 
 
-const saveDirectory = 'C:\\uprecipes\\posts\\19-04-25';
+const saveDirectory = 'C:\\uprecipes\\posts\\23-04-25';
 
 if (!fs.existsSync(saveDirectory)) {
   fs.mkdirSync(saveDirectory, { recursive: true });
