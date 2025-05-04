@@ -1,11 +1,18 @@
 {
-  "totalAccounts": 46,
-  "activeAccounts": 46,
+  "totalAccounts": 41,
+  "activeAccounts": 41,
   "bannedAccounts": 0,
   "spamLabeledAccounts": 0,
   "accountsWithErrors": 0,
-  "checkedAt": "2025-05-01T11:27:55.523Z",
+  "checkedAt": "2025-05-04T23:36:52.562Z",
   "accounts": [
+    {
+      "username": "hazelparkerz.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:z6u63mhl24mxqqe7ldzuyrek"
+    },
     {
       "username": "avacallahan12.bsky.social",
       "active": true,
@@ -119,13 +126,6 @@
       "did": "did:plc:gsjmm6nnjq7uxpuiea3ujyu6"
     },
     {
-      "username": "briellethornewood.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:qs23gxw73l53hyszandf2hec"
-    },
-    {
       "username": "nolanacrey.bsky.social",
       "active": true,
       "banned": false,
@@ -138,13 +138,6 @@
       "banned": false,
       "spamLabeled": false,
       "did": "did:plc:mogimucszyzcehqurwj7vp4z"
-    },
-    {
-      "username": "zeynahalworth.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:nuevhlzm5omjhrv26xa5lu5t"
     },
     {
       "username": "amelioravirelle.bsky.social",
@@ -203,13 +196,6 @@
       "did": "did:plc:li76ahkvgvxqt6z454ntyyqz"
     },
     {
-      "username": "venessaralurielle.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:p5h5natz7d27jjitqr5rdxkf"
-    },
-    {
       "username": "oriavelledamaris.bsky.social",
       "active": true,
       "banned": false,
@@ -229,13 +215,6 @@
       "banned": false,
       "spamLabeled": false,
       "did": "did:plc:7eaoint2wes6kmbgrdxlxq7a"
-    },
-    {
-      "username": "marcythiadeloraine.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:sgtj2rjo26b3oujzlpbxk55l"
     },
     {
       "username": "bellamiraquade.bsky.social",
@@ -285,20 +264,6 @@
       "banned": false,
       "spamLabeled": false,
       "did": "did:plc:er4niepnxoyixssz3ep27jrx"
-    },
-    {
-      "username": "catalinawrenley.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:z3bpyufwqcn3igdhb756ztou"
-    },
-    {
-      "username": "marcellinefrost.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:ddxnhdwfy6pshhiicb2vjzke"
     },
     {
       "username": "viviennerhoslyn.bsky.social",

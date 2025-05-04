@@ -1,262 +1,52 @@
 [
-  {
-      "imagepath": "1.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "2.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "3.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "4.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "5.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "6.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "7.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "8.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "9.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "10.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "11.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "12.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "13.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "14.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "15.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "16.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "17.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "18.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "19.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "20.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "21.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "22.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "23.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "24.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "25.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-      "imagepath": "26.jpg",
-      "alt": "picture",
-      "createAt": "2025-05-01-13-55"
-  },
-  {
-    "imagepath": "1.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "2.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "3.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "4.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "5.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "6.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "7.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "8.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "9.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "10.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "11.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "12.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "13.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "14.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "15.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "16.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "17.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "18.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "19.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "20.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "21.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "22.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "23.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "24.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "25.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-},
-{
-    "imagepath": "26.jpg",
-    "alt": "picture",
-    "createAt": "2025-05-01-13-55"
-}
-]
+    { "text": "I never follow recipes exactly. I treat them like the speed limit." },
+    { "text": "If the food doesn’t sizzle, are you even cooking?" },
+    { "text": "Cooking is my love language. Cleaning up is not." },
+    { "text": "Every great dish starts with too much garlic." },
+    { "text": "I don’t meal prep. I meal guess." },
+    { "text": "The fridge light is my midnight spotlight." },
+    { "text": "Baking is chemistry. Cooking is chaos. I like both." },
+    { "text": "If it says 'let it rest,' I do too." },
+    { "text": "Why yes, I do cry when cutting onions and when I burn dinner." },
+    { "text": "Oil, salt, garlic. That’s the holy trinity." },
+    { "text": "There’s no such thing as too much cheese. Only not enough." },
+    { "text": "Cooking rule: taste it, adjust, taste again. Repeat until full." },
+    { "text": "I put 'chef' in my bio because I didn’t burn breakfast today." },
+    { "text": "Every recipe is a journey. Some get lost. Some arrive deliciously." },
+    { "text": "Leftovers are tomorrow’s miracle or mystery." },
+    { "text": "Cooking mistake? Turn off the lights and serve it anyway." },
+    { "text": "Food so good, even the smoke alarm wants a taste." },
+    { "text": "I measure garlic with my heart. And by heart, I mean a lot." },
+    { "text": "Some days you sous-vide. Some days you microwave. Balance." },
+    { "text": "A kitchen without mess is a kitchen without flavor." },
+    { "text": "Soup is just an excuse to throw everything in one pot." },
+    { "text": "People count sheep. I count pasta boiling." },
+    { "text": "I didn’t burn dinner. I added personality." },
+    { "text": "My cutting board has more knife marks than my heart has scars." },
+    { "text": "Cooking is therapy you can eat." },
+    { "text": "If it’s not sizzling, it’s not exciting." },
+    { "text": "Salting pasta water is non-negotiable. Like rent." },
+    { "text": "I came, I cooked, I overestimated how hungry I was." },
+    { "text": "Some cookbooks are just confidence boosters for freestylers like me." },
+    { "text": "The more garlic, the closer to greatness." },
+    { "text": "Whisking aggressively fixes most problems." },
+    { "text": "Recipes lie. Add more seasoning anyway." },
+    { "text": "I season food like I argue online: passionately and without mercy." },
+    { "text": "Burnt edges? That’s flavor. Trust me." },
+    { "text": "Cooking at home means snacks before, during, and after dinner." },
+    { "text": "The kitchen is my gym. I lift cast iron skillets daily." },
+    { "text": "Pouring olive oil is an emotional decision." },
+    { "text": "My favorite utensil? The one that’s clean." },
+    { "text": "I don’t need a timer. I need discipline." },
+    { "text": "Kitchen success is 10% recipe, 90% attitude." },
+    { "text": "I treat my spices like friends: the more, the better." },
+    { "text": "If it sticks to the pan, it's rustic." },
+    { "text": "My apron has more sauce stains than a mafia movie." },
+    { "text": "Kitchen playlist: clanging pots and internal screaming." },
+    { "text": "A good stew takes time. And patience. And maybe a glass of wine." },
+    { "text": "Microwaves are fine. Just don’t tell the food snobs." },
+    { "text": "Real talk: cooking is 70% cleaning up after yourself." },
+    { "text": "Some call it leftovers. I call it pre-cooked perfection." },
+    { "text": "Breakfast for dinner is always a good idea." }
+  ]
+  
