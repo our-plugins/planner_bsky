@@ -1,10 +1,10 @@
 {
-  "totalAccounts": 41,
-  "activeAccounts": 41,
+  "totalAccounts": 39,
+  "activeAccounts": 39,
   "bannedAccounts": 0,
   "spamLabeledAccounts": 0,
   "accountsWithErrors": 0,
-  "checkedAt": "2025-05-04T23:36:52.562Z",
+  "checkedAt": "2025-05-08T00:58:24.004Z",
   "accounts": [
     {
       "username": "hazelparkerz.bsky.social",
@@ -133,25 +133,11 @@
       "did": "did:plc:nlobcdo6tqumoh5zyuz5fkas"
     },
     {
-      "username": "arisellemernan.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:mogimucszyzcehqurwj7vp4z"
-    },
-    {
       "username": "amelioravirelle.bsky.social",
       "active": true,
       "banned": false,
       "spamLabeled": false,
       "did": "did:plc:lrzvl3bfcemwtxuum5f3p5rk"
-    },
-    {
-      "username": "calistaramerenne.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:duyvqqiqnkplyf4bg27m5lcw"
     },
     {
       "username": "isolderavelle.bsky.social",

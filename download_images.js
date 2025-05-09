@@ -4,37 +4,32 @@ const https = require('https');
 const http = require('http');
 
 const imageUrls = [
-  "https://uprecipes.blog/wp-content/uploads/2025/05/mums-decadent-fruit-mince-tarts-indulge.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/quick-skillet-bread-in-10-minutes.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/churro-saltine-toffee-this-sweet-crispy.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/crumbl-style-pumpkin-pie-cookies-ingredients-for.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/rich-and-creamy-shrimp-and-crab.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/mexican-street-corn-chicken-rice.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/traditional-christmas-fruit-cake-ingredients-for.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/creamy-banana-cream-cheesecake-hello-everyone.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/hello-friends-today-im-excited-to.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/chewy-nutty-squirrel-bars-a-treat-for-all-seasons.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/delicious-stuffed-bell-peppers-hello-friends.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/summer-peach-and-blueberry-salad-preparation.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/mouthwatering-best-beef-enchiladas.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/delectable-pepper-honey-cedar-plank-salmon.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/delicious-and-vibrant-ube-macapuno-cake.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/decadent-chocolate-strawberry-cheesecake.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/brown-butter-pear-cake-a-cozy.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/crispy-fried-chicken-the-perfect-recipe.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/savory-braised-oxtails-in-red-wine-sauce.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/fun-and-tasty-poop-emoji-cookies.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/flavorful-beef-enchiladas-hello-wonderful-friends.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/decadent-brownie-caramel-cheesecake.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/grilled-scallops-hello-seafood-lovers-if.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/bacon-ranch-chicken-skewers-hello-grill.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/cocojito-frozen-mojito-hello-cocktail-enthusiasts.jpg",
+  "https://uprecipes.blog/wp-content/uploads/2025/05/delicious-chocolate-mint-cookies.jpg",
   "https://uprecipes.blog/wp-content/uploads/2025/05/decadent-chocolate-fudge-pie-recipe-prep.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/hot-chocolate-poke-cake-ingredients-for.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/carrot-cake-recipe-ingredients-1-cup.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/raspberry-chocolate-lava-cupcakes-ingredients-1.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/cinnamon-sugar-pizza-with-crescent-rolls-a.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/santas-hat-shirley-temple-a-festive-1.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/raspberry-filled-almond-snowball-cookies-ingredients.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/banana-bread-brownies-a-delightful-fusion.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/easy-homemade-pecan-pie-ingredients-1.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/mini-pineapple-upside-down-cakes-ingredients-for.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/butter-pecan-cookies-ingredients-1-cup.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/creamy-lemon-fudge-ingredients-14-oz.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/cinnamon-roll-fudge-ingredients-2-cups.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/pistachio-pudding-cookies-ingredients-1-cup.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/salted-caramel-cheesecake-cookies-ingredients-for.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/chocolate-fondant-a-rich-and-comforting.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/cheesecake-stuffed-chocolate-chip-cookies-decadent.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/reeses-cheese-ball-ingredients-base-8.jpg",
-  "https://uprecipes.blog/wp-content/uploads/2025/05/cranberry-orange-pecan-muffins-ingredients-2.jpg"
+  "https://uprecipes.blog/wp-content/uploads/2025/05/black-forest-tiramisu-ingredients-400g.jpg"
 ];
 
 
 
-const saveDirectory = 'C:\\uprecipes\\posts\\02-05-25';
+const saveDirectory = 'C:\\uprecipes\\posts\\08-05-25';
 
 if (!fs.existsSync(saveDirectory)) {
   fs.mkdirSync(saveDirectory, { recursive: true });
