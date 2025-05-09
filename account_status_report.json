@@ -1,24 +1,24 @@
 {
   "totalAccounts": 39,
-  "activeAccounts": 39,
+  "activeAccounts": 38,
   "bannedAccounts": 0,
   "spamLabeledAccounts": 0,
-  "accountsWithErrors": 0,
-  "checkedAt": "2025-05-08T00:58:24.004Z",
+  "accountsWithErrors": 1,
+  "checkedAt": "2025-05-09T19:40:43.903Z",
   "accounts": [
-    {
-      "username": "hazelparkerz.bsky.social",
-      "active": true,
-      "banned": false,
-      "spamLabeled": false,
-      "did": "did:plc:z6u63mhl24mxqqe7ldzuyrek"
-    },
     {
       "username": "avacallahan12.bsky.social",
       "active": true,
       "banned": false,
       "spamLabeled": false,
       "did": "did:plc:jrpnfh4n3weeyidi5hzodwfp"
+    },
+    {
+      "username": "hazelparkerz.bsky.social",
+      "active": true,
+      "banned": false,
+      "spamLabeled": false,
+      "did": "did:plc:z6u63mhl24mxqqe7ldzuyrek"
     },
     {
       "username": "marissavanderwood.bsky.social",
@@ -176,10 +176,10 @@
     },
     {
       "username": "jessavinemorala.bsky.social",
-      "active": true,
+      "active": false,
       "banned": false,
       "spamLabeled": false,
-      "did": "did:plc:li76ahkvgvxqt6z454ntyyqz"
+      "error": "Error: fetch failed"
     },
     {
       "username": "oriavelledamaris.bsky.social",

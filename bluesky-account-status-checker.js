@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var api_1 = require("@atproto/api");
 var fs = require("fs");
 // Configuration
-var ACCOUNTS_FILE = "accounts.json";
+var ACCOUNTS_FILE = "accounts_warmed.json";
 var OUTPUT_FILE = "account_status_report.json";
 var BATCH_DELAY = 2000; // 2 seconds between batches to avoid rate limits
 // Main function

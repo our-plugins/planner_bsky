@@ -18,7 +18,7 @@ interface AccountStatus {
 }
 
 // Configuration
-const ACCOUNTS_FILE = "accounts.json";
+const ACCOUNTS_FILE = "accounts_warmed.json";
 const OUTPUT_FILE = "account_status_report.json";
 const BATCH_DELAY = 2000; // 2 seconds between batches to avoid rate limits
 
