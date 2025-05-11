@@ -191,7 +191,7 @@ async function processAccountPost(account: Account, post: Post): Promise<void> {
 async function warmup() {
     try {
         // Read accounts and posts from files
-        const accounts: Account[] = readAccountsFromFile('accounts_warmed.json');
+        const accounts: Account[] = readAccountsFromFile('accounts_new.json');
         const posts: Post[] = readPostsFromFile('posts.json');
         
         console.log(`Found ${accounts.length} accounts and ${posts.length} posts`);
