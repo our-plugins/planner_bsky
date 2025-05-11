@@ -255,7 +255,7 @@ async function warmup() {
         clearImgDirectory();
         
         // Read accounts and uncategorized posts from files
-        const accounts: Account[] = readAccountsFromFile('accounts.json');
+        const accounts: Account[] = readAccountsFromFile('accounts_new.json');
         const uncategorizedPosts: UncategorizedPost[] = readUncategorizedPostsFromFile('uncategorized_posts.json');
         
         console.log(`Found ${accounts.length} accounts and ${uncategorizedPosts.length} uncategorized posts`);
