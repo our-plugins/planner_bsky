@@ -19,7 +19,7 @@ interface Post {
     title?: string;
     description?: string;
     thumbnail?: string;
-    createAt: string;
+    createAt?: string;
 }
 
 // Rate limit tracking
@@ -164,7 +164,7 @@ async function postContentWithRateLimits(agent: BskyAgent, post: Post) {
     }
 }
 
-// Function to process a single account with a single post
+// Function to process a single account with a post
 async function processAccountPost(account: Account, post: Post): Promise<void> {
     try {
         const agent = new BskyAgent({ service: 'https://bsky.social' });
@@ -191,7 +191,7 @@ async function processAccountPost(account: Account, post: Post): Promise<void> {
 async function warmup() {
     try {
         // Read accounts and posts from files
-        const accounts: Account[] = readAccountsFromFile('accounts_warmed.json');
+        const accounts: Account[] = readAccountsFromFile('accounts_new.json');
         const posts: Post[] = readPostsFromFile('posts.json');
         
         console.log(`Found ${accounts.length} accounts and ${posts.length} posts`);
@@ -201,18 +201,19 @@ async function warmup() {
             return;
         }
         
-        // Determine how many accounts we can process based on available posts
-        const processCount = Math.min(accounts.length, posts.length);
+        console.log(`Will process all ${accounts.length} accounts, cycling through ${posts.length} posts as needed`);
         
-        console.log(`Will process ${processCount} account-post pairs`);
-        
-        // Process accounts sequentially to avoid rate limits
-        for (let i = 0; i < processCount; i++) {
-            console.log(`Processing account ${i + 1}/${processCount}`);
-            await processAccountPost(accounts[i], posts[i]);
+        // Process each account, cycling through posts when needed
+        for (let i = 0; i < accounts.length; i++) {
+            // Get a post using modulo to cycle through available posts
+            const postIndex = i % posts.length;
+            const post = posts[postIndex];
+            
+            console.log(`Processing account ${i + 1}/${accounts.length} with post ${postIndex + 1}/${posts.length}`);
+            await processAccountPost(accounts[i], post);
         }
         
-        console.log('Warmup completed successfully!');
+        console.log('All accounts have posted successfully!');
         
     } catch (error) {
         console.error('Error in warmup process:', error);

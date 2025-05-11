@@ -236,7 +236,7 @@ function postContentWithRateLimits(agent, post) {
         });
     });
 }
-// Function to process a single account with a single post
+// Function to process a single account with a post
 function processAccountPost(account, post) {
     return __awaiter(this, void 0, void 0, function () {
         var agent, delay_1, error_2;
@@ -273,26 +273,27 @@ function processAccountPost(account, post) {
 // Main function to manage the warmup process
 function warmup() {
     return __awaiter(this, void 0, void 0, function () {
-        var accounts, posts, processCount, i, error_3;
+        var accounts, posts, i, postIndex, post, error_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 5, , 6]);
-                    accounts = readAccountsFromFile('accounts_warmed.json');
+                    accounts = readAccountsFromFile('accounts_new.json');
                     posts = readPostsFromFile('posts.json');
                     console.log("Found ".concat(accounts.length, " accounts and ").concat(posts.length, " posts"));
                     if (accounts.length === 0 || posts.length === 0) {
                         console.error('No accounts or posts found. Check your JSON files.');
                         return [2 /*return*/];
                     }
-                    processCount = Math.min(accounts.length, posts.length);
-                    console.log("Will process ".concat(processCount, " account-post pairs"));
+                    console.log("Will process all ".concat(accounts.length, " accounts, cycling through ").concat(posts.length, " posts as needed"));
                     i = 0;
                     _a.label = 1;
                 case 1:
-                    if (!(i < processCount)) return [3 /*break*/, 4];
-                    console.log("Processing account ".concat(i + 1, "/").concat(processCount));
-                    return [4 /*yield*/, processAccountPost(accounts[i], posts[i])];
+                    if (!(i < accounts.length)) return [3 /*break*/, 4];
+                    postIndex = i % posts.length;
+                    post = posts[postIndex];
+                    console.log("Processing account ".concat(i + 1, "/").concat(accounts.length, " with post ").concat(postIndex + 1, "/").concat(posts.length));
+                    return [4 /*yield*/, processAccountPost(accounts[i], post)];
                 case 2:
                     _a.sent();
                     _a.label = 3;
@@ -300,7 +301,7 @@ function warmup() {
                     i++;
                     return [3 /*break*/, 1];
                 case 4:
-                    console.log('Warmup completed successfully!');
+                    console.log('All accounts have posted successfully!');
                     return [3 /*break*/, 6];
                 case 5:
                     error_3 = _a.sent();
