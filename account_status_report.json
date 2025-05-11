@@ -1,10 +1,10 @@
 {
   "totalAccounts": 39,
-  "activeAccounts": 38,
+  "activeAccounts": 39,
   "bannedAccounts": 0,
   "spamLabeledAccounts": 0,
-  "accountsWithErrors": 1,
-  "checkedAt": "2025-05-09T19:40:43.903Z",
+  "accountsWithErrors": 0,
+  "checkedAt": "2025-05-10T13:59:09.016Z",
   "accounts": [
     {
       "username": "avacallahan12.bsky.social",
@@ -176,10 +176,10 @@
     },
     {
       "username": "jessavinemorala.bsky.social",
-      "active": false,
+      "active": true,
       "banned": false,
       "spamLabeled": false,
-      "error": "Error: fetch failed"
+      "did": "did:plc:li76ahkvgvxqt6z454ntyyqz"
     },
     {
       "username": "oriavelledamaris.bsky.social",
