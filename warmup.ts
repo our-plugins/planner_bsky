@@ -192,7 +192,7 @@ async function warmup() {
     try {
         // Read accounts and posts from files
         const accounts: Account[] = readAccountsFromFile('accounts_new.json');
-        const posts: Post[] = readPostsFromFile('posts.json');
+        const posts: Post[] = readPostsFromFile('100tweets.json');
         
         console.log(`Found ${accounts.length} accounts and ${posts.length} posts`);
         
