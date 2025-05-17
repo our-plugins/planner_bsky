@@ -278,8 +278,8 @@ function warmup() {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 5, , 6]);
-                    accounts = readAccountsFromFile('accounts_new.json');
-                    posts = readPostsFromFile('100tweets.json');
+                    accounts = readAccountsFromFile('accounts_warmed.json');
+                    posts = readPostsFromFile('posts.json');
                     console.log("Found ".concat(accounts.length, " accounts and ").concat(posts.length, " posts"));
                     if (accounts.length === 0 || posts.length === 0) {
                         console.error('No accounts or posts found. Check your JSON files.');
