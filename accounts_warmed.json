@@ -1,4 +1,6 @@
 [
+  { "username": "seraphinavance.bsky.social", "password": "tomt-cfio-csup-m64c" },
+  { "username": "annabellacreed.bsky.social", "password": "l2gh-dpac-pxlj-qiny" },
   { "username": "hazelparkerz.bsky.social", "password": "oqpf-rx7u-i6i7-3ug7" },
   { "username": "marissavanderwood.bsky.social", "password": "r4he-zrwr-udof-iqhr" },
   { "username": "islabennett.bsky.social", "password": "cmdn-cec7-4fek-pgkt" },
@@ -22,7 +24,4 @@
   { "username": "marcellinedorr.bsky.social", "password": "ezyn-p26z-rjqb-mm5d" },
   { "username": "evandriaskell.bsky.social", "password": "3hhc-u3hx-6a26-wt2t" },
   { "username": "julessandrafey.bsky.social", "password": "czg7-fnjr-axvm-lyxe" },
-  { "username": "seraphinavance.bsky.social", "password": "tomt-cfio-csup-m64c" },
-  { "username": "angeliquestorm.bsky.social", "password": "47tc-f3xf-saw2-vvcs" },
-  { "username": "annabellacreed.bsky.social", "password": "l2gh-dpac-pxlj-qiny" }
-]
+  { "username": "angeliquestorm.bsky.social", "password": "47tc-f3xf-saw2-vvcs" }]
