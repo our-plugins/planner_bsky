@@ -1,198 +1,130 @@
 [
-    {
-        "text": "Savory Cornish hen roasted with maple cider glaze! 🍁🐔 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/cider-maple-oven-roasted-cornish-hen-ingredients/",
-        "title": "Cider Maple Cornish Hen",
-        "description": "Cider Maple Oven Roasted Cornish Hen",
-        "thumbnail": "16.jpg",
-        "createAt": "2025-05-18-14-35"
-    },
-    {
-        "text": "Sip this rich turtle coffee cocktail for a boozy caramel buzz! ☕🥃🐢 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/turtle-coffee-cocktail-ingredients-1-ounce/",
-        "title": "Turtle Coffee Cocktail",
-        "description": "Turtle Coffee Cocktail",
-        "thumbnail": "12.jpg",
-        "createAt": "2025-05-18-14-35"
-    },
-    {
-        "text": "Spooky-delicious pizza skulls that ooze with flavor! 💀🍕 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/halloween-pizza-skulls-ingredients-1-tube/",
-        "title": "Halloween Pizza Skulls",
-        "description": "Halloween Pizza Skulls",
-        "thumbnail": "3.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Sweet, tangy, and crunchy—lemonade puppy chow is a citrusy treat! 🍋🐾 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/lemonade-puppy-chow-ingredients-9-cups/",
-        "title": "Lemonade Puppy Chow",
-        "description": "Lemonade Puppy Chow",
-        "thumbnail": "5.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-{
-        "text": "No-bake pumpkin cheesecake balls = fall bliss in every bite! 🎃🧀 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/no-bake-pumpkin-cheesecake-balls-ingredients-8/",
-        "title": "No-Bake Pumpkin Cheesecake Balls",
-        "description": "No-Bake Pumpkin Cheesecake Balls",
-        "thumbnail": "6.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Warm, custardy, and topped with dreamy vanilla sauce! 🍞🍮 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/old-fashioned-bread-pudding-with-vanilla-sauce/",
-        "title": "Old-Fashioned Bread Pudding",
-        "description": "Old-Fashioned Bread Pudding with Vanilla Sauce",
-        "thumbnail": "2.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Decadent, rich, and gooey—this German Chocolate Poke Cake is pure indulgence! 🍫🥥 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/german-chocolate-poke-cake-ingredients-for/",
-        "title": "German Chocolate Poke Cake",
-        "description": "German Chocolate Poke Cake",
-        "thumbnail": "1.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-   
-    {
-        "text": "Savory crab-stuffed mushrooms that melt in your mouth! 🦀🍄 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/crab-stuffed-mushrooms-ingredients-3-5-oz-lump/",
-        "title": "Crab Stuffed Mushrooms",
-        "description": "Crab Stuffed Mushrooms",
-        "thumbnail": "4.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    
-   
-    {
-        "text": "Adorably tasty peanut butter paw prints—kids love 'em! 🐻🥜 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/beary-delicious-peanut-butter-paw-prints/",
-        "title": "Peanut Butter Paw Prints",
-        "description": "Beary Delicious Peanut Butter Paw Prints",
-        "thumbnail": "7.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Gingerbread cookie sandwiches that crinkle with joy! ❄️🍪 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/gingerbread-crinkle-cookie-sandwiches-with-vanilla/",
-        "title": "Gingerbread Crinkle Cookie Sandwiches",
-        "description": "Gingerbread Crinkle Cookie Sandwiches with Vanilla",
-        "thumbnail": "8.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "This peanut butter cup frappuccino is a dream in a glass! 🥜🍫☕ Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/peanut-butter-cup-frappuccino-ingredients-1/",
-        "title": "Peanut Butter Cup Frappuccino",
-        "description": "Peanut Butter Cup Frappuccino",
-        "thumbnail": "9.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Cookie pie loaded with gooey chocolate—don’t miss this one! 🍪🥧 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/chocolate-chip-cookie-pie-ingredients-1/",
-        "title": "Chocolate Chip Cookie Pie",
-        "description": "Chocolate Chip Cookie Pie",
-        "thumbnail": "10.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Big flavor and chewy bites—these monster cookies are a beast! 👹🍪 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/chocolate-monster-cookies-ingredients-1-cup/",
-        "title": "Chocolate Monster Cookies",
-        "description": "Chocolate Monster Cookies",
-        "thumbnail": "11.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    
-    {
-        "text": "Spicy, cheesy, and addictive—this Korean fire chicken brings the heat! 🔥🐔 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/buldak-korean-fire-chicken-ingredients/",
-        "title": "Buldak Korean Fire Chicken",
-        "description": "Buldak Korean Fire Chicken",
-        "thumbnail": "13.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Fluffy cheesecake meets tropical pineapple heaven! 🍍🍰 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/pineapple-heaven-cheesecake-ingredients-2/",
-        "title": "Pineapple Heaven Cheesecake",
-        "description": "Pineapple Heaven Cheesecake",
-        "thumbnail": "17.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "My granddad’s favorite—crispy German potato pancakes! 🇩🇪🥔 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/just-made-my-granddads-favorite-recipe-german-potato-pancakes-kartoffelpuffer/",
-        "title": "German Potato Pancakes",
-        "description": "Granddad's Favorite German Potato Pancakes (Kartoffelpuffer)",
-        "thumbnail": "14.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Savory Cornish hen roasted with maple cider glaze! 🍁🐔 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/cider-maple-oven-roasted-cornish-hen-ingredients/",
-        "title": "Cider Maple Cornish Hen",
-        "description": "Cider Maple Oven Roasted Cornish Hen",
-        "thumbnail": "16.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Million-dollar taste in one cheesy ravioli casserole! 💰🧀 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/million-dollar-ravioli-casserole-ingredients/",
-        "title": "Million Dollar Ravioli Casserole",
-        "description": "Million Dollar Ravioli Casserole",
-        "thumbnail": "17.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Savory sliders packed with chicken, bacon, and ranch—yes please! 🐔🥓🥪 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/chicken-bacon-ranch-sliders-savory-chicken/",
-        "title": "Chicken Bacon Ranch Sliders",
-        "description": "Chicken Bacon Ranch Sliders",
-        "thumbnail": "18.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Taco night made easy—this overnight pasta is bold and cheesy! 🌮🍝 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/overnight-taco-pasta-ingredients-1/",
-        "title": "Overnight Taco Pasta",
-        "description": "Overnight Taco Pasta",
-        "thumbnail": "19.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Sweet and buttery skillet corn you’ll crave every time! 🌽🧈 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/honey-butter-skillet-corn-ingredients/",
-        "title": "Honey Butter Skillet Corn",
-        "description": "Honey Butter Skillet Corn",
-        "thumbnail": "20.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Lazy never tasted so good—soft, chocolatey cookie bars! 🍫📦 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/lazy-chocolate-chip-cookie-bars-ingredients/",
-        "title": "Lazy Chocolate Chip Cookie Bars",
-        "description": "Lazy Chocolate Chip Cookie Bars",
-        "thumbnail": "21.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Ooey-gooey coffee caramel pecan cake—pure dessert magic! ☕🍰🥜 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/gooey-coffee-caramel-pecan-cake-ingredients/",
-        "title": "Coffee Caramel Pecan Cake",
-        "description": "Gooey Coffee Caramel Pecan Cake",
-        "thumbnail": "22.jpg",
-        "createAt": "2025-05-17-14-35"
-    },
-    {
-        "text": "Cherry cheesecake bars that are sweet, creamy, and fruity! 🍒🧁 Here is recipe 👇🏻!",
-        "uri": "https://uprecipes.blog/cherry-cheesecake-bars-ingredients-for-the/",
-        "title": "Cherry Cheesecake Bars",
-        "description": "Cherry Cheesecake Bars",
-        "thumbnail": "23.jpg",
-        "createAt": "2025-05-17-14-35"
-    }
+  {
+    "text": "This brownie batter puppy chow is chocolatey, crunchy, and wildly addictive! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/brownie-batter-puppy-chow-ingredients-5/",
+    "title": "Brownie Batter Puppy Chow",
+    "description": "A sweet and crunchy no-bake snack loaded with chocolate brownie flavor!",
+    "thumbnail": "1.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Oreo Balls are creamy, chocolatey, and perfect for a no-bake treat! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/oreo-balls-a-delightful-no-bake-treat/",
+    "title": "Oreo Balls",
+    "description": "These no-bake Oreo balls are rich, creamy, and dipped in chocolate bliss!",
+    "thumbnail": "2.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Strawberry truffles bursting with fruity sweetness and a creamy center! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/sweet-strawberry-truffles-decadent-creamy-truffles/",
+    "title": "Sweet Strawberry Truffles",
+    "description": "Decadent strawberry truffles with a rich, creamy texture and fruity flavor!",
+    "thumbnail": "3.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Twinkle Candy Swirl is peppermint magic in every bite—festive and fun! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/twinkle-candy-swirl-a-cozy-peppermint/",
+    "title": "Twinkle Candy Swirl",
+    "description": "A peppermint-flavored swirl candy that's cozy, colorful, and festive!",
+    "thumbnail": "4.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Spicy Mexican Corn Bites pack a punch—crispy, cheesy, and fiery! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/spicy-mexican-corn-bites-ingredients-2/",
+    "title": "Spicy Mexican Corn Bites",
+    "description": "Zesty corn bites with spice and crunch in every cheesy mouthful!",
+    "thumbnail": "5.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Make cookies with brownie mix? Yes! Soft, fudgy, and fast! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/cookies-made-from-brownie-mix-ingredients/",
+    "title": "Cookies Made from Brownie Mix",
+    "description": "Easy chewy cookies with a rich brownie twist—ready in no time!",
+    "thumbnail": "6.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Mango Strawberry Piña Colada is tropical sunshine in a glass! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/mango-strawberry-pina-colada-a-tropical-cocktail-dream/",
+    "title": "Mango Strawberry Piña Colada",
+    "description": "A creamy tropical cocktail with mango, strawberry & coconut!",
+    "thumbnail": "7.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Mini Peppermint Bark Cheesecakes—festive, creamy, and no-bake! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/mini-peppermint-bark-no-bake-cheesecakes-ingredients/",
+    "title": "Mini Peppermint Bark No-Bake Cheesecakes",
+    "description": "Creamy peppermint cheesecakes with a chocolatey crunch—no baking required!",
+    "thumbnail": "8.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Sweet, spicy, and creamy—this cranberry jalapeño dip is a holiday must! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/holiday-cranberry-jalapeno-cream-cheese-dip/",
+    "title": "Holiday Cranberry Jalapeño Cream Cheese Dip",
+    "description": "A bold dip with sweet cranberry and spicy jalapeño over creamy cheese!",
+    "thumbnail": "9.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Snowy Pineapple Punch is creamy, fruity, and festive! Winter meets tropics! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/creamy-snowy-pineapple-punch-bring-some/",
+    "title": "Creamy Snowy Pineapple Punch",
+    "description": "A tropical punch that's creamy, sweet, and winter-party perfect!",
+    "thumbnail": "10.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Cherry Mash Truffles are rich, nostalgic, and bursting with cherry joy! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/cherry-mash-truffles-ingredients-for-the/",
+    "title": "Cherry Mash Truffles",
+    "description": "Cherry and chocolate unite in these classic candy-inspired truffles!",
+    "thumbnail": "11.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Zesty Lemon Meltaway Cookies melt in your mouth with citrusy bliss! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/zesty-lemon-meltaway-cookies-these-delightful/",
+    "title": "Zesty Lemon Meltaway Cookies",
+    "description": "Light, buttery lemon cookies that truly melt in your mouth!",
+    "thumbnail": "12.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Cream Puff Cake is layered, luscious, and impossible to resist! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/cream-puff-cake-ingredients-1-cup/",
+    "title": "Cream Puff Cake",
+    "description": "A fluffy pastry layered with creamy vanilla and rich chocolate!",
+    "thumbnail": "13.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Blueberry Cheesecake Swirl Cookies—fruity, creamy, and cookie magic! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/blueberry-cheesecake-swirl-cookies-these-delightful/",
+    "title": "Blueberry Cheesecake Swirl Cookies",
+    "description": "Soft cookies swirled with blueberry and cheesecake goodness!",
+    "thumbnail": "14.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "White Chocolate Rose Mudslide is elegance in a glass! Smooth & floral! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/white-chocolate-rose-mudslide-ingredients-1/",
+    "title": "White Chocolate Rose Mudslide",
+    "description": "A romantic cocktail with white chocolate, cream, and rose flavor!",
+    "thumbnail": "15.webp",
+    "createAt": "2025-05-18-14-35"
+  },
+  {
+    "text": "Purple Velvet Cake is as stunning as it is delicious—vibrant and moist! Here is recipe 👇🏻!",
+    "uri": "https://uprecipes.blog/recipe-for-purple-velvet-cake-ingredients/",
+    "title": "Purple Velvet Cake",
+    "description": "A rich and fluffy purple cake that’s perfect for any celebration!",
+    "thumbnail": "16.webp",
+    "createAt": "2025-05-18-14-35"
+  }
 ]
